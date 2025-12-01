@@ -1,0 +1,183 @@
+/* contact Page Styles */
+.contact-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+  color: #2d3748;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header */
+.contact-page header {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 20px 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a5af9, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.center-nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.center-nav ul li a {
+  color: #2d3748;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.center-nav ul li a:hover,
+.center-nav ul li a.active {
+  color: #6a5af9;
+  background-color: #f0f4ff;
+}
+
+.back-btn {
+  border: 2px solid #6a5af9;
+  padding: 10px 24px;
+  border-radius: 20px;
+  color: #6a5af9;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #6a5af9;
+  color: white;
+}
+
+/* Hero */
+.contact-hero {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d3748;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-top: 10px;
+}
+
+/* Contact Cards */
+.contact-title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.contact-cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  width: 300px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: #6a5af9;
+}
+
+.contact-card-icon {
+  font-size: 2.8rem;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #6a5af9, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+}
+
+.contact-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.contact-card p {
+  font-size: 1.2rem;
+  color: #6a5af9;
+  font-weight: 600;
+}
+
+.contact-card span {
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+/* Footer */
+footer {
+  margin-top: 70px;
+  padding: 50px 0;
+  background: white;
+  border-radius: 30px 30px 0 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #2d3748;
+}
+
+.footer-features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+
+.footer-feature h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-feature p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}

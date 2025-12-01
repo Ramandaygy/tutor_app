@@ -1,0 +1,522 @@
+[
+    {
+        "no": 1,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 1/2 + 1/2?",
+        "pilihan": {
+            "A": "1/4",
+            "B": "1",
+            "C": "3/4",
+            "D": "2"
+        },
+        "jawaban": "B",
+        "penjelasan": "Untuk menambahkan dua pecahan, kita harus memiliki penyebut yang sama. Dalam hal ini, penyebutnya sama, yaitu 2. Jadi, kita dapat menambahkan numeratornya, yaitu 1 + 1 = 2. Kemudian, kita dapat menyederhanakan hasilnya menjadi 2/2, yang sama dengan 1. Jadi, hasil dari 1/2 + 1/2 adalah 1."
+    },
+    {
+        "no": 2,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 5 - 2?",
+        "pilihan": {
+            "A": "3",
+            "B": "5",
+            "C": "7",
+            "D": "1"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk mengurangkan dua bilangan, kita harus mengurangi bilangan yang kedua dari bilangan yang pertama. Dalam hal ini, kita mengurangi 2 dari 5, sehingga hasilnya adalah 5 - 2 = 3. Jadi, hasil dari 5 - 2 adalah 3."
+    },
+    {
+        "no": 3,
+        "materi": "IPA",
+        "pertanyaan": "Apa fungsi dari akar pada tumbuhan?",
+        "pilihan": {
+            "A": "Menghasilkan makanan",
+            "B": "Menghasilkan oksigen",
+            "C": "Menyerap air dan nutrisi",
+            "D": "Menghasilkan bunga"
+        },
+        "jawaban": "C",
+        "penjelasan": "Akar pada tumbuhan memiliki fungsi yang sangat penting, yaitu menyerap air dan nutrisi dari tanah. Akar juga membantu tumbuhan untuk tetap berdiri tegak dan tidak roboh. Jadi, fungsi dari akar pada tumbuhan adalah menyerap air dan nutrisi."
+    },
+    {
+        "no": 4,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 2 x 6?",
+        "pilihan": {
+            "A": "10",
+            "B": "12",
+            "C": "8",
+            "D": "14"
+        },
+        "jawaban": "B",
+        "penjelasan": "Untuk mengalikan dua bilangan, kita harus mengalikan bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita mengalikan 2 dengan 6, sehingga hasilnya adalah 2 x 6 = 12. Jadi, hasil dari 2 x 6 adalah 12."
+    },
+    {
+        "no": 5,
+        "materi": "IPA",
+        "pertanyaan": "Apa yang terjadi pada kupu-kupu saat metamorfosis?",
+        "pilihan": {
+            "A": "Berubah menjadi katak",
+            "B": "Berubah menjadi kecoak",
+            "C": "Berubah dari ulat menjadi kupu-kupu",
+            "D": "Berubah menjadi burung"
+        },
+        "jawaban": "C",
+        "penjelasan": "Metamorfosis adalah proses perubahan bentuk yang dialami oleh beberapa hewan, termasuk kupu-kupu. Pada metamorfosis, kupu-kupu berubah dari ulat menjadi kupu-kupu. Proses ini melibatkan beberapa tahap, termasuk telur, ulat, pupa, dan kupu-kupu. Jadi, apa yang terjadi pada kupu-kupu saat metamorfosis adalah berubah dari ulat menjadi kupu-kupu."
+    },
+    {
+        "no": 6,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 12 ÷ 4?",
+        "pilihan": {
+            "A": "2",
+            "B": "3",
+            "C": "6",
+            "D": "8"
+        },
+        "jawaban": "B",
+        "penjelasan": "Untuk membagi dua bilangan, kita harus membagi bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita membagi 12 dengan 4, sehingga hasilnya adalah 12 ÷ 4 = 3. Jadi, hasil dari 12 ÷ 4 adalah 3."
+    },
+    {
+        "no": 7,
+        "materi": "IPA",
+        "pertanyaan": "Apa yang dimaksud dengan rantai makanan?",
+        "pilihan": {
+            "A": "Proses perubahan bentuk hewan",
+            "B": "Proses perubahan cuaca",
+            "C": "Hubungan antara hewan dan tumbuhan dalam ekosistem",
+            "D": "Proses perubahan bentuk tumbuhan"
+        },
+        "jawaban": "C",
+        "penjelasan": "Rantai makanan adalah hubungan antara hewan dan tumbuhan dalam ekosistem. Rantai makanan menunjukkan bagaimana energi dan nutrisi berpindah dari satu organisme ke organisme lain. Contohnya, tumbuhan membuat makanan melalui fotosintesis, kemudian herbivora memakan tumbuhan, dan kemudian karnivora memakan herbivora. Jadi, rantai makanan adalah hubungan antara hewan dan tumbuhan dalam ekosistem."
+    },
+    {
+        "no": 8,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 1/4 + 1/4?",
+        "pilihan": {
+            "A": "1/2",
+            "B": "1/8",
+            "C": "3/4",
+            "D": "2"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk menambahkan dua pecahan, kita harus memiliki penyebut yang sama. Dalam hal ini, penyebutnya sama, yaitu 4. Jadi, kita dapat menambahkan numeratornya, yaitu 1 + 1 = 2. Kemudian, kita dapat menyederhanakan hasilnya menjadi 2/4, yang sama dengan 1/2. Jadi, hasil dari 1/4 + 1/4 adalah 1/2."
+    },
+    {
+        "no": 9,
+        "materi": "IPA",
+        "pertanyaan": "Apa fungsi dari daun pada tumbuhan?",
+        "pilihan": {
+            "A": "Menghasilkan makanan",
+            "B": "Menghasilkan oksigen",
+            "C": "Menyerap air dan nutrisi",
+            "D": "Menghasilkan bunga"
+        },
+        "jawaban": "A",
+        "penjelasan": "Daun pada tumbuhan memiliki fungsi yang sangat penting, yaitu menghasilkan makanan melalui fotosintesis. Daun menggunakan energi dari sinar matahari, air, dan nutrisi untuk menghasilkan makanan. Jadi, fungsi dari daun pada tumbuhan adalah menghasilkan makanan."
+    },
+    {
+        "no": 10,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 9 - 3?",
+        "pilihan": {
+            "A": "5",
+            "B": "6",
+            "C": "7",
+            "D": "8"
+        },
+        "jawaban": "B",
+        "penjelasan": "Untuk mengurangkan dua bilangan, kita harus mengurangi bilangan yang kedua dari bilangan yang pertama. Dalam hal ini, kita mengurangi 3 dari 9, sehingga hasilnya adalah 9 - 3 = 6. Jadi, hasil dari 9 - 3 adalah 6."
+    },
+    {
+        "no": 11,
+        "materi": "IPA",
+        "pertanyaan": "Apa yang dimaksud dengan energi panas?",
+        "pilihan": {
+            "A": "Energi yang dihasilkan oleh matahari",
+            "B": "Energi yang dihasilkan oleh bumi",
+            "C": "Energi yang dihasilkan oleh api",
+            "D": "Energi yang dihasilkan oleh air"
+        },
+        "jawaban": "A",
+        "penjelasan": "Energi panas adalah energi yang dihasilkan oleh matahari. Matahari menghasilkan energi panas melalui proses nuklir yang terjadi di intinya. Energi panas ini kemudian dipancarkan ke ruang angkasa dan dapat dipergunakan oleh bumi untuk menghangatkan udara, air, dan tanah. Jadi, energi panas adalah energi yang dihasilkan oleh matahari."
+    },
+    {
+        "no": 12,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 6 x 9?",
+        "pilihan": {
+            "A": "50",
+            "B": "54",
+            "C": "60",
+            "D": "70"
+        },
+        "jawaban": "B",
+        "penjelasan": "Untuk mengalikan dua bilangan, kita harus mengalikan bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita mengalikan 6 dengan 9, sehingga hasilnya adalah 6 x 9 = 54. Jadi, hasil dari 6 x 9 adalah 54."
+    },
+    {
+        "no": 13,
+        "materi": "IPA",
+        "pertanyaan": "Apa fungsi dari batang pada tumbuhan?",
+        "pilihan": {
+            "A": "Menghasilkan makanan",
+            "B": "Menghasilkan oksigen",
+            "C": "Menyerap air dan nutrisi",
+            "D": "Mengangkut air dan nutrisi ke daun"
+        },
+        "jawaban": "D",
+        "penjelasan": "Batang pada tumbuhan memiliki fungsi yang sangat penting, yaitu mengangkut air dan nutrisi ke daun. Batang juga membantu tumbuhan untuk tetap berdiri tegak dan tidak roboh. Jadi, fungsi dari batang pada tumbuhan adalah mengangkut air dan nutrisi ke daun."
+    },
+    {
+        "no": 14,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 24 ÷ 4?",
+        "pilihan": {
+            "A": "5",
+            "B": "6",
+            "C": "8",
+            "D": "10"
+        },
+        "jawaban": "C",
+        "penjelasan": "Untuk membagi dua bilangan, kita harus membagi bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita membagi 24 dengan 4, sehingga hasilnya adalah 24 ÷ 4 = 6. Jadi, hasil dari 24 ÷ 4 adalah 6."
+    },
+    {
+        "no": 15,
+        "materi": "IPA",
+        "pertanyaan": "Apa yang dimaksud dengan sumber daya alam?",
+        "pilihan": {
+            "A": "Sumber daya yang dihasilkan oleh manusia",
+            "B": "Sumber daya yang dihasilkan oleh hewan",
+            "C": "Sumber daya yang dihasilkan oleh tumbuhan",
+            "D": "Sumber daya yang dihasilkan oleh alam"
+        },
+        "jawaban": "D",
+        "penjelasan": "Sumber daya alam adalah sumber daya yang dihasilkan oleh alam, seperti air, tanah, udara, dan mineral. Sumber daya alam sangat penting untuk kehidupan manusia dan harus dilestarikan agar tidak habis. Jadi, sumber daya alam adalah sumber daya yang dihasilkan oleh alam."
+    },
+    {
+        "no": 16,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 7 - 2?",
+        "pilihan": {
+            "A": "5",
+            "B": "6",
+            "C": "8",
+            "D": "9"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk mengurangkan dua bilangan, kita harus mengurangi bilangan yang kedua dari bilangan yang pertama. Dalam hal ini, kita mengurangi 2 dari 7, sehingga hasilnya adalah 7 - 2 = 5. Jadi, hasil dari 7 - 2 adalah 5."
+    },
+    {
+        "no": 17,
+        "materi": "IPA",
+        "pertanyaan": "Apa fungsi dari bunga pada tumbuhan?",
+        "pilihan": {
+            "A": "Menghasilkan makanan",
+            "B": "Menghasilkan oksigen",
+            "C": "Menyerap air dan nutrisi",
+            "D": "Menghasilkan biji"
+        },
+        "jawaban": "D",
+        "penjelasan": "Bunga pada tumbuhan memiliki fungsi yang sangat penting, yaitu menghasilkan biji. Bunga juga membantu tumbuhan untuk bereproduksi dan menghasilkan keturunan. Jadi, fungsi dari bunga pada tumbuhan adalah menghasilkan biji."
+    },
+    {
+        "no": 18,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 9 x 3?",
+        "pilihan": {
+            "A": "20",
+            "B": "25",
+            "C": "27",
+            "D": "30"
+        },
+        "jawaban": "C",
+        "penjelasan": "Untuk mengalikan dua bilangan, kita harus mengalikan bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita mengalikan 9 dengan 3, sehingga hasilnya adalah 9 x 3 = 27. Jadi, hasil dari 9 x 3 adalah 27."
+    },
+    {
+        "no": 19,
+        "materi": "IPA",
+        "pertanyaan": "Apa yang dimaksud dengan gaya tarik?",
+        "pilihan": {
+            "A": "Gaya yang menarik benda ke atas",
+            "B": "Gaya yang menarik benda ke bawah",
+            "C": "Gaya yang menarik benda ke samping",
+            "D": "Gaya yang menarik benda ke dalam"
+        },
+        "jawaban": "B",
+        "penjelasan": "Gaya tarik adalah gaya yang menarik benda ke bawah. Gaya tarik disebabkan oleh gravitasi, yaitu gaya yang menarik benda ke pusat bumi. Jadi, gaya tarik adalah gaya yang menarik benda ke bawah."
+    },
+    {
+        "no": 20,
+        "materi": "Matematika",
+        "pertanyaan": "Apa hasil dari 16 ÷ 2?",
+        "pilihan": {
+            "A": "6",
+            "B": "7",
+            "C": "8",
+            "D": "10"
+        },
+        "jawaban": "C",
+        "penjelasan": "Untuk membagi dua bilangan, kita harus membagi bilangan yang pertama dengan bilangan yang kedua. Dalam hal ini, kita membagi 16 dengan 2, sehingga hasilnya adalah 16 ÷ 2 = 8. Jadi, hasil dari 16 ÷ 2 adalah 8."
+    },
+    {
+        "no": 21,
+        "materi": "Pecahan",
+        "pertanyaan": "Apa hasil dari 1/2 + 1/4?",
+        "pilihan": {
+            "A": "3/4",
+            "B": "1/2",
+            "C": "1/4",
+            "D": "2/4"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk menambahkan pecahan, kita harus memiliki penyebut yang sama. Dalam hal ini, kita dapat mengubah 1/2 menjadi 2/4 dengan mengkalikan numerator dan denominator dengan 2. Kemudian, kita dapat menambahkan 2/4 + 1/4 = 3/4. Jadi, hasil dari 1/2 + 1/4 adalah 3/4."
+    },
+    {
+        "no": 22,
+        "materi": "Bilangan bulat",
+        "pertanyaan": "Apa hasil dari -3 + 2?",
+        "pilihan": {
+            "A": "-1",
+            "B": "1",
+            "C": "0",
+            "D": "-5"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk menambahkan bilangan bulat, kita harus memperhatikan tanda-tanda. Dalam hal ini, kita memiliki -3 (bilangan negatif) dan 2 (bilangan positif). Kita dapat mengubah -3 menjadi -3 + 0, kemudian menambahkan 2, sehingga menjadi -3 + 2 = -1. Jadi, hasil dari -3 + 2 adalah -1."
+    },
+    {
+        "no": 23,
+        "materi": "Volume bangun ruang",
+        "pertanyaan": "Apa rumus volume kubus?",
+        "pilihan": {
+            "A": "V = lwh",
+            "B": "V = s^3",
+            "C": "V = 2lw",
+            "D": "V = lw"
+        },
+        "jawaban": "B",
+        "penjelasan": "Kubus memiliki sisi-sisi yang sama panjang, sehingga kita dapat menggunakan rumus V = s^3 untuk menghitung volumenya. Dalam rumus ini, s adalah panjang sisi kubus. Jadi, rumus volume kubus adalah V = s^3."
+    },
+    {
+        "no": 24,
+        "materi": "Satuan waktu",
+        "pertanyaan": "Berapa menit dalam 1 jam?",
+        "pilihan": {
+            "A": "30 menit",
+            "B": "60 menit",
+            "C": "90 menit",
+            "D": "120 menit"
+        },
+        "jawaban": "B",
+        "penjelasan": "Dalam 1 jam, terdapat 60 menit. Kita dapat menghitung ini dengan membagi 1 jam menjadi 60 bagian yang sama, sehingga setiap bagian memiliki durasi 1 menit. Jadi, terdapat 60 menit dalam 1 jam."
+    },
+    {
+        "no": 25,
+        "materi": "Diagram batang",
+        "pertanyaan": "Apa yang digambarkan oleh diagram batang?",
+        "pilihan": {
+            "A": "Perbandingan data",
+            "B": "Urutan data",
+            "C": "Jumlah data",
+            "D": "Rata-rata data"
+        },
+        "jawaban": "A",
+        "penjelasan": "Diagram batang digunakan untuk membandingkan data antara beberapa kategori. Setiap batang pada diagram batang mewakili satu kategori, dan tinggi batang menunjukkan nilai data untuk kategori tersebut. Dengan demikian, kita dapat membandingkan data antara kategori-kategori yang berbeda. Jadi, diagram batang digunakan untuk menggambarkan perbandingan data."
+    },
+    {
+        "no": 26,
+        "materi": "Skala denah",
+        "pertanyaan": "Apa yang dimaksud dengan skala 1:100?",
+        "pilihan": {
+            "A": "1 cm pada denah = 1 m di lapangan",
+            "B": "1 cm pada denah = 10 m di lapangan",
+            "C": "1 cm pada denah = 100 m di lapangan",
+            "D": "1 cm pada denah = 1000 m di lapangan"
+        },
+        "jawaban": "B",
+        "penjelasan": "Skala 1:100 berarti bahwa 1 cm pada denah mewakili 100 cm atau 1 m di lapangan. Dengan demikian, kita dapat menghitung jarak di lapangan dengan mengukur jarak pada denah dan mengalikannya dengan 100. Jadi, skala 1:100 berarti 1 cm pada denah = 1 m di lapangan."
+    },
+    {
+        "no": 27,
+        "materi": "Sifat-sifat bangun ruang",
+        "pertanyaan": "Berapa banyak sisi pada kubus?",
+        "pilihan": {
+            "A": "4 sisi",
+            "B": "6 sisi",
+            "C": "8 sisi",
+            "D": "12 sisi"
+        },
+        "jawaban": "B",
+        "penjelasan": "Kubus memiliki 6 sisi yang sama, yaitu atas, bawah, kiri, kanan, depan, dan belakang. Setiap sisi kubus berbentuk persegi, sehingga kubus memiliki 6 sisi persegi. Jadi, kubus memiliki 6 sisi."
+    },
+    {
+        "no": 28,
+        "materi": "Organ pernapasan hewan",
+        "pertanyaan": "Apa yang digunakan oleh ikan untuk bernapas?",
+        "pilihan": {
+            "A": "Paru-paru",
+            "B": "Insang",
+            "C": "Hidung",
+            "D": "Mulut"
+        },
+        "jawaban": "B",
+        "penjelasan": "Ikan menggunakan insang untuk bernapas. Insang adalah organ pernapasan yang khusus digunakan oleh hewan air, seperti ikan. Insang berfungsi untuk mengambil oksigen dari air dan melepaskan karbon dioksida. Jadi, ikan menggunakan insang untuk bernapas."
+    },
+    {
+        "no": 29,
+        "materi": "Sistem pencernaan manusia",
+        "pertanyaan": "Apa yang terjadi pada makanan di dalam lambung?",
+        "pilihan": {
+            "A": "Makanan dicerna oleh gigi",
+            "B": "Makanan diubah menjadi energi",
+            "C": "Makanan dicerna oleh asam lambung",
+            "D": "Makanan disimpan untuk digunakan nanti"
+        },
+        "jawaban": "C",
+        "penjelasan": "Di dalam lambung, makanan dicerna oleh asam lambung. Asam lambung adalah cairan yang diproduksi oleh lambung untuk memecah makanan menjadi partikel-partikel yang lebih kecil. Proses ini disebut pencernaan, dan asam lambung berperan penting dalam proses ini. Jadi, makanan dicerna oleh asam lambung di dalam lambung."
+    },
+    {
+        "no": 30,
+        "materi": "Rantai makanan",
+        "pertanyaan": "Apa yang dimaksud dengan rantai makanan?",
+        "pilihan": {
+            "A": "Urutan hewan yang memakan hewan lain",
+            "B": "Urutan tumbuhan yang memproduksi makanan",
+            "C": "Urutan organisme yang memakan dan dimakan",
+            "D": "Urutan ekosistem yang berbeda"
+        },
+        "jawaban": "C",
+        "penjelasan": "Rantai makanan adalah urutan organisme yang memakan dan dimakan. Rantai makanan menunjukkan bagaimana energi dan nutrisi berpindah dari satu organisme ke organisme lain melalui proses makan dan dimakan. Jadi, rantai makanan adalah urutan organisme yang memakan dan dimakan."
+    },
+    {
+        "no": 31,
+        "materi": "Pesawat sederhana",
+        "pertanyaan": "Apa yang dimaksud dengan tuas?",
+        "pilihan": {
+            "A": "Alat untuk mengangkat benda",
+            "B": "Alat untuk memotong benda",
+            "C": "Alat untuk mengukur benda",
+            "D": "Alat untuk menggabungkan benda"
+        },
+        "jawaban": "A",
+        "penjelasan": "Tuas adalah alat sederhana yang digunakan untuk mengangkat atau memindahkan benda. Tuas bekerja dengan menggunakan gaya yang diterapkan pada satu ujung untuk menghasilkan gaya yang lebih besar pada ujung lain. Jadi, tuas adalah alat untuk mengangkat benda."
+    },
+    {
+        "no": 32,
+        "materi": "Perubahan wujud benda",
+        "pertanyaan": "Apa yang terjadi pada air ketika dipanaskan?",
+        "pilihan": {
+            "A": "Air membeku",
+            "B": "Air menguap",
+            "C": "Air menjadi padat",
+            "D": "Air menjadi cair"
+        },
+        "jawaban": "B",
+        "penjelasan": "Ketika air dipanaskan, air menguap. Penguapan adalah proses perubahan wujud benda dari cair menjadi gas. Ketika air dipanaskan, molekul-molekul air bergerak lebih cepat dan berubah menjadi uap air. Jadi, air menguap ketika dipanaskan."
+    },
+    {
+        "no": 33,
+        "materi": "Siklus air",
+        "pertanyaan": "Apa yang terjadi pada air hujan setelah jatuh ke tanah?",
+        "pilihan": {
+            "A": "Air hujan menguap langsung",
+            "B": "Air hujan menjadi air tanah",
+            "C": "Air hujan mengalir ke sungai",
+            "D": "Air hujan menjadi es"
+        },
+        "jawaban": "B",
+        "penjelasan": "Setelah air hujan jatuh ke tanah, air hujan menjadi air tanah. Air tanah adalah air yang meresap ke dalam tanah dan menjadi bagian dari siklus air. Air tanah dapat digunakan oleh tumbuhan dan hewan, atau mengalir ke sungai dan danau. Jadi, air hujan menjadi air tanah setelah jatuh ke tanah."
+    },
+    {
+        "no": 34,
+        "materi": "Konduktor dan isolator panas",
+        "pertanyaan": "Apa yang dimaksud dengan konduktor panas?",
+        "pilihan": {
+            "A": "Benda yang menghantarkan panas dengan baik",
+            "B": "Benda yang menghantarkan panas dengan buruk",
+            "C": "Benda yang tidak menghantarkan panas",
+            "D": "Benda yang menyerap panas"
+        },
+        "jawaban": "A",
+        "penjelasan": "Konduktor panas adalah benda yang menghantarkan panas dengan baik. Konduktor panas memiliki kemampuan untuk menghantarkan panas dari satu tempat ke tempat lain dengan cepat dan efisien. Contoh konduktor panas adalah logam seperti tembaga dan aluminium. Jadi, konduktor panas adalah benda yang menghantarkan panas dengan baik."
+    },
+    {
+        "no": 35,
+        "materi": "Pecahan",
+        "pertanyaan": "Apa hasil dari 3/4 - 1/4?",
+        "pilihan": {
+            "A": "1/2",
+            "B": "1/4",
+            "C": "2/4",
+            "D": "3/4"
+        },
+        "jawaban": "C",
+        "penjelasan": "Untuk mengurangi pecahan, kita harus memiliki penyebut yang sama. Dalam hal ini, kita dapat mengurangi 3/4 - 1/4 = 2/4. Jadi, hasil dari 3/4 - 1/4 adalah 2/4."
+    },
+    {
+        "no": 36,
+        "materi": "Bilangan bulat",
+        "pertanyaan": "Apa hasil dari -2 x 3?",
+        "pilihan": {
+            "A": "-6",
+            "B": "6",
+            "C": "-1",
+            "D": "1"
+        },
+        "jawaban": "A",
+        "penjelasan": "Untuk mengalikan bilangan bulat, kita harus memperhatikan tanda-tanda. Dalam hal ini, kita memiliki -2 (bilangan negatif) dan 3 (bilangan positif). Kita dapat mengalikan -2 x 3 = -6. Jadi, hasil dari -2 x 3 adalah -6."
+    },
+    {
+        "no": 37,
+        "materi": "Volume bangun ruang",
+        "pertanyaan": "Apa rumus volume balok?",
+        "pilihan": {
+            "A": "V = lwh",
+            "B": "V = s^3",
+            "C": "V = 2lw",
+            "D": "V = lw"
+        },
+        "jawaban": "A",
+        "penjelasan": "Balok memiliki tiga dimensi, yaitu panjang (l), lebar (w), dan tinggi (h). Rumus volume balok adalah V = lwh, yang berarti bahwa volume balok adalah hasil kali dari panjang, lebar, dan tinggi. Jadi, rumus volume balok adalah V = lwh."
+    },
+    {
+        "no": 38,
+        "materi": "Satuan waktu",
+        "pertanyaan": "Berapa detik dalam 1 menit?",
+        "pilihan": {
+            "A": "30 detik",
+            "B": "60 detik",
+            "C": "90 detik",
+            "D": "120 detik"
+        },
+        "jawaban": "B",
+        "penjelasan": "Dalam 1 menit, terdapat 60 detik. Kita dapat menghitung ini dengan membagi 1 menit menjadi 60 bagian yang sama, sehingga setiap bagian memiliki durasi 1 detik. Jadi, terdapat 60 detik dalam 1 menit."
+    },
+    {
+        "no": 39,
+        "materi": "Diagram garis",
+        "pertanyaan": "Apa yang digambarkan oleh diagram garis?",
+        "pilihan": {
+            "A": "Perbandingan data",
+            "B": "Urutan data",
+            "C": "Jumlah data",
+            "D": "Trend data"
+        },
+        "jawaban": "D",
+        "penjelasan": "Diagram garis digunakan untuk menggambarkan trend data. Diagram garis menunjukkan bagaimana data berubah seiring waktu, sehingga kita dapat melihat pola atau trend dalam data. Jadi, diagram garis digunakan untuk menggambarkan trend data."
+    },
+    {
+        "no": 40,
+        "materi": "Sifat-sifat bangun ruang",
+        "pertanyaan": "Berapa banyak rusuk pada kubus?",
+        "pilihan": {
+            "A": "6 rusuk",
+            "B": "8 rusuk",
+            "C": "12 rusuk",
+            "D": "20 rusuk"
+        },
+        "jawaban": "C",
+        "penjelasan": "Kubus memiliki 12 rusuk, yaitu 4 rusuk atas, 4 rusuk bawah, dan 4 rusuk samping. Setiap rusuk kubus berbentuk garis lurus, sehingga kubus memiliki 12 rusuk. Jadi, kubus memiliki 12 rusuk."
+    }
+]

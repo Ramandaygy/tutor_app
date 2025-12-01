@@ -1,0 +1,403 @@
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* =============================== */
+/* 🔹 NAVBAR */
+/* =============================== */
+.navbar {
+  background: #fafafa;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .nav-links button {
+  margin-left: 10px;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  color: #7290c7;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logo {
+  font-weight: bold;
+  color: #3a5bc7;
+  font-size: 1.2rem;
+}
+
+/* =============================== */
+/* 🔹 ICON MENU STYLE */
+/* =============================== */
+.menu-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+
+.menu-icon:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.menu-icon svg line {
+  stroke: #222;
+}
+
+/* Overlay ketika sidebar aktif */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 4;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* Sidebar animasi */
+.chatbot-history {
+  width: 260px;
+  background: #f9fafb;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.chatbot-history.show {
+  transform: translateX(0);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol chat baru */
+.new-chat-btn {
+  background: #1c37d1;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.new-chat-btn:hover {
+  background: #537daa;
+}
+
+/* =============================== */
+/* 🔹 LAYOUT UTAMA */
+/* =============================== */
+.chatbot-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "main soal";
+  overflow: hidden;
+  background: #f9fafc;
+  transition: all 0.3s ease;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .chatbot-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================== */
+/* 🔹 AREA CHAT */
+/* =============================== */
+.chatbot-main {
+  background: #fff;
+  grid-area: main;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+}
+
+.literasi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eef1f6;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.literasi-header h2 {
+  text-transform: capitalize;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.soal-btn {
+  background: #4a4ff0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+.soal-btn:hover {
+  background: #3a3fd0;
+  transform: translateY(-2px);
+}
+
+/* =============================== */
+/* 🔹 CHAT BOX */
+/* =============================== */
+.chat-box {
+  flex: 1;
+  padding: 16px;
+  background: #f5f6fa;
+  margin: 15px 0;
+  border-radius: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Pesan dari user (kanan) */
+.chat-message.user {
+  align-self: flex-end;
+  background: #1890ff;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px 16px 0 16px;
+  max-width: 70%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* Pesan dari bot (kiri) */
+.chat-message.bot {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 16px 16px 16px 0;
+  max-width: 70%;
+  word-wrap: break-word;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  animation: fadeIn 0.2s ease-in;
+}
+
+.chat-message.bot p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* =============================== */
+/* 🔹 INPUT PESAN */
+/* =============================== */
+.chat-input {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.chat-input:focus-within {
+  border-color: #1890ff;
+  box-shadow: 0 0 6px rgba(24, 144, 255, 0.3);
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: transparent;
+  padding: 8px 10px;
+}
+
+.upload-container {
+  position: relative;
+}
+
+.upload-btn,
+.send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #f3f4f6;
+  color: #444;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover {
+  background: #1890ff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.send-btn {
+  background: #1890ff;
+  color: #fff;
+}
+.send-btn:hover {
+  background: #1673cc;
+  transform: translateY(-1px);
+}
+
+/* Upload options */
+.upload-options {
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
+}
+
+.upload-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+}
+.upload-options label:hover {
+  background: #f3f4f6;
+}
+.upload-options input {
+  display: none;
+}
+
+/* =============================== */
+/* 🔹 PANEL SOAL */
+/* =============================== */
+.chatbot-soal {
+  background: #fafafa;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+  width: 100%;
+  max-width: 380px;
+  min-width: 380px;
+}
+
+.soal-card {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.soal-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.soal-card button {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  background: #1890ff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.soal-card button:hover {
+  background: #1673cc;
+  transform: scale(1.02);
+}
+
+/* Penjelasan soal */
+.penjelasan-box {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #f9f9ff;
+  border-left: 4px solid #4a90e2;
+}
+.penjelasan-box .benar {
+  color: green;
+  font-weight: bold;
+}
+.penjelasan-box .salah {
+  color: red;
+  font-weight: bold;
+}
+.penjelasan-box .info {
+  margin-top: 8px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* =============================== */
+/* 🔹 POPUP FEEDBACK */
+/* =============================== */
+.popup-box {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeInOut 2s ease;
+  z-index: 999;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}

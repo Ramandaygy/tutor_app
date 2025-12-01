@@ -1,0 +1,65 @@
+.article-detail-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.article-detail-container:hover {
+  transform: translateY(-5px);
+}
+
+.article-detail h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #1f2937; /* warna teks lebih gelap untuk kontras */
+  line-height: 1.2;
+}
+
+.article-image {
+  width: 100%;
+  border-radius: 15px;
+  margin: 25px 0;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-date {
+  color: #6b7280; /* abu modern */
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.article-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #374151;
+  white-space: pre-line;
+}
+
+.article-content p {
+  margin-bottom: 20px;
+}
+
+.back-btn a {
+  display: inline-block;
+  text-decoration: none;
+  color: #3b82f6;
+  font-size: 9px;
+  font-weight: 100;
+  padding: 8px 15px;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-btn a:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}

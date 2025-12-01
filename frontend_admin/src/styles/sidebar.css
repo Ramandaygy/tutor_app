@@ -1,0 +1,171 @@
+/* ===== SIDEBAR CONTAINER ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, transform 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* Saat sidebar collapse */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* ===== HEADER ===== */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.collapse-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.collapse-btn:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ===== MENU ===== */
+.sidebar-menu {
+  flex: 1;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.menu-item.active {
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+}
+
+.menu-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar.collapsed .menu-icon {
+  margin-right: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.sidebar.collapsed .logout-btn span {
+  display: none;
+}
+
+/* ===== CONTENT AREA ADJUSTMENT ===== */
+.admin-container {
+  display: flex;
+  transition: margin-left 0.3s ease;
+  margin-left: 240px; /* ketika sidebar terbuka */
+}
+
+.sidebar.collapsed ~ .admin-container {
+  margin-left: 80px; /* ketika sidebar collapse */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .admin-container {
+    margin-left: 0;
+  }
+}
+
+
+/* ===== CONTENT AREA ADJUSTMENT FOR ALL PAGES ===== */
+.sidebar ~ .users-main-content,
+.sidebar ~ .admin-container {
+  transition: margin-left 0.3s ease;
+  margin-left: 240px; /* ketika sidebar terbuka */
+}
+
+.sidebar.collapsed ~ .users-main-content,
+.sidebar.collapsed ~ .admin-container {
+  margin-left: 80px; /* ketika sidebar collapse */
+}
+
+/* Responsive untuk semua pages */
+@media (max-width: 768px) {
+  .sidebar ~ .users-main-content,
+  .sidebar ~ .admin-container {
+    margin-left: 0;
+  }
+}

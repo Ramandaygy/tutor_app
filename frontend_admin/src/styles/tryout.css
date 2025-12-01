@@ -1,0 +1,88 @@
+/* Container halaman */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Konten utama */
+.page-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 260px;
+  transition: margin-left 0.3s;
+}
+
+/* Jika sidebar collapse */
+.sidebar.collapsed ~ .page-content {
+  margin-left: 80px;
+}
+
+/* Judul */
+.page-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Input, textarea, select */
+.page-content textarea,
+.page-content input[type="text"],
+.page-content select,
+.page-content input[type="file"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background: white;
+  transition: 0.2s;
+}
+
+/* Focus effect */
+.page-content textarea:focus,
+.page-content input[type="text"]:focus,
+.page-content select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0px 0px 4px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* Textarea style */
+.page-content textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Tombol Simpan */
+.page-content button {
+  padding: 12px 26px;
+  font-size: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 600;
+}
+
+.page-content button:hover {
+  background: #1e4fcf;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .page-content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+
+  .page-content textarea,
+  .page-content input,
+  .page-content select {
+    max-width: 100%;
+  }
+}

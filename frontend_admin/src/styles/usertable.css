@@ -1,0 +1,201 @@
+.user-table-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-table-header h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.user-table-subheader h2 {
+  color: #34495e;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.table-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 300px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.table-controls select {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th {
+  background-color: #f8f9fa;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.user-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.user-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-row:hover {
+  background-color: #f8f9fa;
+}
+
+.role-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.role-badge.student {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-badge.admin {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.role-badge.teacher {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.status-badge.inactive {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.separator {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 30px 0;
+}
+
+.progress-section h2 {
+  color: #34495e;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.progress-section p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* ===== Tombol Edit dan Hapus ===== */
+.user-table td button.edit-btn,
+.user-table td button.delete-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Tombol Edit */
+.user-table td button.edit-btn {
+  background-color: #10b981;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.user-table td button.edit-btn:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+/* Tombol Hapus */
+.user-table td button.delete-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.user-table td button.delete-btn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-table th,
+  .user-table td {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  .user-table td button.edit-btn,
+  .user-table td button.delete-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

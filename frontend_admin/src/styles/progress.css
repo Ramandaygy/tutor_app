@@ -1,0 +1,112 @@
+/* Container utama */
+.progress-container {
+  min-height: 100vh;
+  background: #f3f4f6; /* abu terang */
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Judul */
+.progress-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+/* Grid statistik */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Warna khusus */
+.text-blue { color: #2563eb; }
+.text-green { color: #16a34a; }
+.text-purple { color: #7c3aed; }
+.text-yellow { color: #eab308; }
+.text-indigo { color: #4f46e5; }
+.text-red { color: #dc2626; }
+
+/* Form Update */
+.update-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.update-form h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.update-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.update-form label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.update-form input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.update-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.update-form button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.update-form button:hover {
+  background: #1d4ed8;
+}

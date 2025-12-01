@@ -1,0 +1,123 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  padding: 20px;
+}
+
+.register-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h2 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.register-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.register-button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(38, 117, 252, 0.4);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.register-footer p {
+  color: #7f8c8d;
+}
+
+.auth-link {
+  color: #3498db;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 20px;
+  }
+  
+  .register-header h2 {
+    font-size: 24px;
+  }
+}

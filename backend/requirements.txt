@@ -1,0 +1,14 @@
+Flask==2.2.5
+Flask-Cors==3.0.10
+Flask-PyMongo==2.3.0
+Flask-Jwt-Extended==4.6.0
+langchain
+langchain-groq
+sentence-transformers
+faiss-cpu
+pypdf
+pytesseract
+Pillow
+easyocr
+gunicorn==21.2.0
+python-dotenv==1.0.1
