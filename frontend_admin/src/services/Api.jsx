@@ -166,4 +166,52 @@ export const deleteArticle = async (articleId) => {
 };
 
 
+// ==================== MODULES ====================
+
+// ADMIN
+export const getModules = async () => {
+  const res = await api.get("/modul/admin/modules");
+  return res.data;
+};
+
+export const uploadModule = async (formData) => {
+  const res = await api.post(
+    "/modul/admin/modules/upload",
+    formData,
+    { headers: { "Content-Type": "multipart/form-data" } }
+  );
+  return res.data;
+};
+
+export const deleteModule = async (id) => {
+  const res = await api.delete(`/modul/admin/modules/delete/${id}`);
+  return res.data;
+};
+
+// PUBLIC (kalau nanti dipakai di user)
+export const getPublicModules = async (params = "") => {
+  const res = await api.get(`/modul/modules${params}`);
+  return res.data;
+};
+
+
+// ================= TRYOUT =================
+
+// Tambah soal manual
+export const addTryoutQuestion = (formData) =>
+  api.post("/admin/tryout/add", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
+// Upload PDF soal
+export const uploadTryoutPDF = (formData) =>
+  api.post("/admin/tryout/upload", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
+// Ambil soal tryout (user)
+export const getTryoutSoal = () =>
+  api.get("/api/user/tryout/soal");
+
+
 export default api;

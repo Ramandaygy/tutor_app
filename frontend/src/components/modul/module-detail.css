@@ -1,0 +1,80 @@
+/* =====================
+   OVERLAY
+===================== */
+.lesson-detail-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lesson-detail-container.active {
+  display: flex;
+}
+
+/* =====================
+   DETAIL BOX
+===================== */
+.lesson-detail {
+  background: white;
+  width: 90%;
+  max-width: 850px;
+  max-height: 85vh;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   HEADER
+===================== */
+.detail-header {
+  padding: 20px 26px;
+  background: linear-gradient(135deg, #4f8cff, #6a5af9);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-btn {
+  background: rgba(255,255,255,.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+/* =====================
+   BODY
+===================== */
+.detail-body {
+  padding: 26px;
+  overflow-y: auto;
+}
+
+.detail-title {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+.detail-text {
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* =====================
+   LIST
+===================== */
+.detail-list li {
+  padding: 10px 14px;
+  border-left: 4px solid #4f8cff;
+  background: #f8fafc;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 10px;
+}

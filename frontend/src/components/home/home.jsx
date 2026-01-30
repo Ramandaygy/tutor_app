@@ -28,14 +28,12 @@ const Home = () => {
     else setGreeting("Selamat malam");
   }, [navigate]);
 
-   const handleTryoutClick = () => {
-    // Tambahkan efek animasi sebelum navigasi
+  const handleTryoutClick = () => {
     const button = document.querySelector('.tryout-button');
     if (button) {
       button.style.transform = 'scale(0.95)';
       setTimeout(() => {
         button.style.transform = '';
-        // Navigasi ke halaman Tryout
         navigate("/tryout");
       }, 150);
     } else {
@@ -43,7 +41,18 @@ const Home = () => {
     }
   };
 
- 
+  const handleLatihanClick = () => {
+    const button = document.querySelector('.latihan-button');
+    if (button) {
+      button.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        button.style.transform = '';
+        navigate("/latihan");
+      }, 150);
+    } else {
+      navigate("/latihan");
+    }
+  };
 
   return (
     <div className="home-container">
@@ -51,6 +60,7 @@ const Home = () => {
         <div className="logo">TutorPedia</div>
         <div className="nav-links">
           <button onClick={() => navigate("/progress")}>📊 Progress</button>
+          <button onClick={() => navigate("/modules")}>📚 Modul</button>
           <button onClick={() => navigate("/profile")}>{name}</button>
         </div>
       </nav>
@@ -92,18 +102,23 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Bagian Tryout Baru - Menggantikan progress bawah */}
+      {/* Bagian Tryout dan Latihan Soal */}
       <div className="tryout-section">
         <div className="tryout-title">Siap menguji kemampuan Anda?</div>
-        <button className="tryout-button" onClick={handleTryoutClick}>
-          TRYOUT
-        </button>
+        <div className="button-container">
+          <button className="latihan-button" onClick={handleLatihanClick}>
+            LATIHAN SOAL
+          </button>
+          <button className="tryout-button" onClick={handleTryoutClick}>
+            TRYOUT
+          </button>
+        </div>
         <div className="tryout-info">
-          Klik tombol di atas untuk memulai tryout dan mengukur pemahaman Anda
+          Pilih latihan soal untuk belajar atau tryout untuk menguji pemahaman Anda
         </div>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Home;

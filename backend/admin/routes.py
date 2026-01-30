@@ -12,6 +12,8 @@ import traceback
 from extensions import mongo
 from werkzeug.utils import secure_filename
 from bson import ObjectId
+from admin import admin_bp
+
 import os
 
 
@@ -25,9 +27,6 @@ def admin_required(fn):
             return jsonify({"status": "error", "message": "Akses hanya untuk admin"}), 403
         return fn(*args, **kwargs)
     return wrapper
-
-# ------------------ Blueprint ------------------
-admin_bp = Blueprint("admin", __name__)
 
 # ------------------ Auth untuk Admin ------------------
 @admin_bp.route("/register", methods=["POST"])
@@ -220,6 +219,8 @@ def get_admin_stats():
         current_app.logger.error(f"Get stats error: {e}")
         return jsonify({"status": "error", "message": "Terjadi kesalahan server"}), 500
 
+
+
 # ------------------ Endpoint Progress untuk User ------------------
 @admin_bp.route("/progress/me", methods=["GET"])
 @jwt_required()
@@ -250,6 +251,9 @@ def update_progress():
     except Exception as e:
         current_app.logger.error(f"Update progress error: {e}")
         return jsonify({"status": "error", "message": "Terjadi kesalahan server"}), 500
+
+
+
 
 # ------------------ Endpoint Progress untuk Admin ------------------
 @admin_bp.route("/progress/all", methods=["GET"])
@@ -293,49 +297,140 @@ def admin_get_user_activity(user_id):
     return jsonify(logs)
 
 
-###### bagian sistem soal tryout #########
 
-#add satu soal
+
+#------------- bagian sistem soal tryout ---------------#
+
+# =========================
+# TAMBAH SOAL TRYOUT
+# =========================
 @admin_bp.route("/tryout/add", methods=["POST"])
+@admin_required
 def add_tryout():
+    question_type = request.form.get("type")
     question = request.form.get("question")
-    answer = request.form.get("answer")
     category = request.form.get("category")
-    options = [request.form.get(f"options[{i}]") for i in range(4)]
 
-    image = request.files.get("image")
-    image_url = None
+    if not question_type or not question:
+        return jsonify({"error": "Data tidak lengkap"}), 400
 
-    if image:
-        filename = secure_filename(image.filename)
-        path = os.path.join("uploads/tryout_images", filename)
-        image.save(path)
-        image_url = f"/uploads/tryout_images/{filename}"
-
-    mongo.db.tryout.insert_one({
+    data = {
+        "type": question_type,
         "question": question,
-        "options": options,
-        "answer": answer,
         "category": category,
-        "image_url": image_url,
-        "created_at": datetime.utcnow(),
+        "created_at": datetime.utcnow()
+    }
+
+    # ===== PILIHAN GANDA =====
+    if question_type == "multiple_choice":
+        options = [request.form.get(f"options[{i}]") for i in range(4)]
+        answer = request.form.get("answer")
+
+        if not all(options) or not answer:
+            return jsonify({"error": "Pilihan ganda tidak lengkap"}), 400
+
+        image = request.files.get("image")
+        if image:
+            filename = secure_filename(image.filename)
+            folder = "uploads/tryout_images"
+            os.makedirs(folder, exist_ok=True)
+            path = os.path.join(folder, filename)
+            image.save(path)
+            data["image_url"] = f"/uploads/tryout_images/{filename}"
+
+        data["options"] = options
+        data["answer"] = answer
+
+    # ===== ESSAY =====
+    elif question_type == "essay":
+        answer_desc = request.form.get("answer_desc")
+        keywords = request.form.get("keywords")
+
+        if not answer_desc:
+            return jsonify({"error": "Jawaban essay kosong"}), 400
+
+        data["answer_desc"] = answer_desc
+        data["keywords"] = (
+            [k.strip() for k in keywords.split(",")] if keywords else []
+        )
+
+    else:
+        return jsonify({"error": "Tipe soal tidak valid"}), 400
+
+    mongo.db.tryout.insert_one(data)
+    return jsonify({"status": "success", "message": "Soal berhasil ditambahkan"})
+
+
+# =========================
+# UPLOAD FILE TRYOUT
+# =========================
+@admin_bp.route("/tryout/upload", methods=["POST"])
+@admin_required
+def upload_tryout_file():
+    file = request.files.get("file")
+    category = request.form.get("category", "Umum")
+
+    if not file:
+        return jsonify({"status": "error", "message": "File tidak ditemukan"}), 400
+
+    filename = secure_filename(file.filename)
+    folder = "uploads/tryout_pdf"
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, filename)
+    file.save(path)
+
+    mongo.db.tryout_pdf.insert_one({
+        "filename": filename,
+        "category": category,
+        "file_url": f"/uploads/tryout_pdf/{filename}",
+        "created_at": datetime.utcnow()
     })
 
-    return jsonify({"message": "Soal berhasil disimpan"})
+    return jsonify({"status": "success", "message": "File soal berhasil diupload!"})
 
-# import soal json
-@admin_bp.route("/tryout/generate", methods=["POST"])
-def generate_tryout_route():
-    body = request.get_json()
-    category = body.get("category", "Umum")
-    jumlah = int(body.get("jumlah", 10))
 
-    data = generate_soal_llm(category, jumlah)
+# =========================
+# GET SOAL TRYOUT (USER)
+# =========================
+@admin_bp.route("/tryout/soal", methods=["GET"])
+def get_tryout_soal():
+    """
+    Dipakai USER (latihan / tryout)
+    Tidak pakai admin_required
+    """
+
+    questions = list(
+        mongo.db.tryout.find({}, {
+            "_id": 1,
+            "type": 1,
+            "question": 1,
+            "options": 1,
+            "answer": 1,
+            "answer_desc": 1,
+            "keywords": 1,
+            "image_url": 1,
+            "category": 1
+        })
+    )
+
+    for q in questions:
+        q["_id"] = str(q["_id"])
+
+        # FALLBACK UNTUK DATA LAMA
+        if "type" not in q:
+            if "options" in q:
+                q["type"] = "multiple_choice"
+            else:
+                q["type"] = "essay"
 
     return jsonify({
-        "message": f"{len(data)} soal berhasil digenerate!",
-        "preview": data
+        "status": "success",
+        "questions": questions
     })
+
+
+
+
 
 # ----------------- BAGIAN ARTIKEL ----------------#
 

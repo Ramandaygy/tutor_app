@@ -1,0 +1,92 @@
+/* ===== CONTAINER ===== */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* ===== CONTENT ===== */
+.page-content {
+  flex: 1;
+  padding: 32px;
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+
+/* sidebar collapse */
+.sidebar.collapsed ~ .page-content {
+  margin-left: 80px;
+}
+
+/* ===== TITLE ===== */
+.page-content h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ===== LABEL ===== */
+.page-content label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  color: #374151;
+}
+
+/* ===== INPUT ===== */
+.page-content textarea,
+.page-content input[type="text"],
+.page-content select {
+  width: 100%;
+  max-width: 700px;
+  padding: 14px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  transition: 0.2s;
+}
+
+/* textarea */
+.page-content textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* focus */
+.page-content textarea:focus,
+.page-content input:focus,
+.page-content select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* ===== BUTTON ===== */
+.page-content button {
+  margin-top: 28px;
+  padding: 14px 30px;
+  font-size: 15px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.page-content button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

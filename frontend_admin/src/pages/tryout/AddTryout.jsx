@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar";
-import axios from "axios";
+import { addTryoutQuestion, uploadTryoutPDF } from "../../services/Api";
 import "../../styles/tryout.css";
-
 
 const AddTryout = () => {
   const [question, setQuestion] = useState("");
@@ -10,23 +9,56 @@ const AddTryout = () => {
   const [answer, setAnswer] = useState("");
   const [category, setCategory] = useState("Matematika");
   const [image, setImage] = useState(null);
+  const [file, setFile] = useState(null);
 
   const handleSubmit = async () => {
     try {
       const formData = new FormData();
-      formData.append("question", question);
-      formData.append("answer", answer);
-      formData.append("category", category);
-      if (image) formData.append("image", image);
 
-      options.forEach((opt, i) => formData.append(`options[${i}]`, opt));
+      // =====================
+      // UPLOAD FILE (PDF/EXCEL)
+      // =====================
+      if (file) {
+        formData.append("file", file);
+        formData.append("category", category);
 
-      const res = await axios.post("/admin/tryout/add", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+        const res = await uploadTryoutPDF(formData);
+        alert(res.data.message || "File soal berhasil diupload");
+      }
 
-      alert(res.data.message);
+      // =====================
+      // INPUT MANUAL PILGAN
+      // =====================
+      else {
+        if (!question || !answer || options.some((o) => !o)) {
+          alert("Soal, pilihan, dan jawaban wajib diisi");
+          return;
+        }
+
+        formData.append("type", "multiple_choice");
+        formData.append("question", question);
+        formData.append("answer", answer);
+        formData.append("category", category);
+
+        options.forEach((opt, i) =>
+          formData.append(`options[${i}]`, opt)
+        );
+
+        if (image) formData.append("image", image);
+
+        const res = await addTryoutQuestion(formData);
+        alert(res.data.message || "Soal berhasil ditambahkan");
+      }
+
+      // Reset form
+      setQuestion("");
+      setOptions(["", "", "", ""]);
+      setAnswer("");
+      setCategory("Matematika");
+      setImage(null);
+      setFile(null);
     } catch (err) {
+      console.error(err);
       alert("Gagal menambahkan soal");
     }
   };
@@ -38,8 +70,11 @@ const AddTryout = () => {
       <div className="page-content">
         <h2>Tambah Soal Tryout</h2>
 
+        <p><strong>Input Soal Manual (Pilihan Ganda):</strong></p>
+
         <textarea
           placeholder="Tuliskan soal..."
+          value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
 
@@ -60,6 +95,7 @@ const AddTryout = () => {
         <input
           type="text"
           placeholder="Jawaban benar"
+          value={answer}
           onChange={(e) => setAnswer(e.target.value)}
         />
 
@@ -70,7 +106,21 @@ const AddTryout = () => {
           <option value="Sains">Sains</option>
         </select>
 
-        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+
+        <hr />
+
+        <p><strong>Atau Upload File Soal (PDF / Excel / CSV):</strong></p>
+
+        <input
+          type="file"
+          accept=".pdf,.xls,.xlsx,.csv"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
 
         <button onClick={handleSubmit}>Simpan</button>
       </div>

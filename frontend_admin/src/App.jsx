@@ -11,6 +11,10 @@ import ProgressDetail from "./components/ProgressDetail";
 import AddTryout from "./pages/tryout/AddTryout";
 import GenerateTryout from "./pages/tryout/GenerateTryout";
 import Sidebar from "./components/Sidebar";
+import ModuleUpload from "./pages/moduls/ModuleUpload";
+import ModuleList from "./pages/moduls/ModuleList";
+import ModuleEdit from "./pages/moduls/ModuleEdit";
+import Essay from "./pages/SoalEssay/essay";
 
 // 🔹 Middleware untuk halaman yang butuh login admin
 const PrivateRoute = ({ children }) => {
@@ -104,6 +108,45 @@ function App() {
           element={
             <PrivateRoute>
               <EditArticle />
+            </PrivateRoute>
+          }
+        />
+
+        {/*route untuk module*/}
+
+        <Route
+          path="/modules/list"
+          element={
+            <PrivateRoute>
+              <ModuleList />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/modules/upload"
+          element={
+            <PrivateRoute>
+              <ModuleUpload />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/modules/edit/:moduleId"
+          element={
+            <PrivateRoute>
+              <ModuleEdit/>
+            </PrivateRoute>
+          }
+        />
+
+        {/* Essay */}
+        <Route
+          path="/soalessay/essay"
+          element={
+            <PrivateRoute>
+              <Essay />
             </PrivateRoute>
           }
         />
