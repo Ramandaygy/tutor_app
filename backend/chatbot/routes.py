@@ -6,7 +6,7 @@ from bson import ObjectId
 from flask import Blueprint, json, request, jsonify
 from extensions import mongo
 from datetime import datetime, timedelta
-from admin.progress_service import recalc_progress
+from admin.progress.progress_service import recalc_progress
 from .service import ask_chatbot
 from chatbot import chatbot_bp
 
@@ -285,7 +285,7 @@ def chatbot_feedback():
     })
 
     # Optional: update nilai rata-rata user (kalau kamu punya sistem poin)
-    from admin.progress_service import update_feedback_score
+    from backend.admin.progress.progress_service import update_feedback_score
     new_rating = update_feedback_score(user_id, rating)
 
     return jsonify({"message": "Feedback tersimpan", "new_rating": new_rating})
