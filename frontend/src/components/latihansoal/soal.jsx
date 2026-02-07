@@ -62,13 +62,14 @@ const SoalTryout = () => {
   };
 
   // ================= ANSWER HANDLER =================
-  const setAnswer = (value) => {
+  const setAnswer = (index, value) => {
     setUserAnswers((prev) => {
       const copy = [...prev];
-      copy[currentQuestion] = value;
+      copy[index] = value;
       return copy;
     });
   };
+
 
 
   // ================= RESULT =================
@@ -153,7 +154,8 @@ const SoalTryout = () => {
                     : ""
                   : ""
               }`}
-              onClick={() => userAnswer === null && setAnswer(i)}
+              onClick={() => userAnswer === null && setAnswer(index, i)}
+
             >
               <span className="option-letter">{optionLetters[i]}</span>
               <span>{opt}</span>
@@ -171,21 +173,25 @@ const SoalTryout = () => {
         <div className="question-header">
           <h3>{index + 1}. Soal Essay</h3>
           <button
+            type="button"
             className={`mark-btn ${markedQuestions[index] ? "marked" : ""}`}
             onClick={toggleMarkQuestion}
           >
             🚩
           </button>
+
         </div>
 
         <p className="question-text">{question.question}</p>
 
         <textarea
+          className="essay-textarea"
           placeholder="Tulis jawaban kamu di sini..."
           rows={6}
-          value={userAnswers[index] || ""}
-          onChange={(e) => setAnswer(e.target.value)}
+          value={userAnswers[index] ?? ""}
+          onChange={(e) => setAnswer(index, e.target.value)}
         />
+
 
         {quizCompleted && (
           <div className="explanation-box">
@@ -197,62 +203,82 @@ const SoalTryout = () => {
     );
   };
 
+
+
   // ================= RESULT COMPONENT =================
   const ResultComponent = () => {
     const { correct, totalMC, score } = calculateResults();
+
     return (
       <div className="result-container">
-        <h2>Hasil Tryout</h2>
-        <div className="score">{score.toFixed(0)}</div>
+        <h2>🎉 Hasil Tryout</h2>
 
-        <p>
-          Benar: {correct} / {totalMC} soal pilihan ganda
+        <div className="score-circle">
+          {score.toFixed(0)}
+        </div>
+
+        <p className="score-text">
+          Benar {correct} dari {totalMC} soal pilihan ganda
         </p>
 
-        <button onClick={() => window.location.reload()}>Ulangi</button>
-        <button onClick={() => navigate("/home")}>Kembali</button>
+        <div className="result-buttons">
+          <button className="btn ulangi" onClick={() => window.location.reload()}>
+            🔄 Ulangi
+          </button>
+          <button className="btn kembali" onClick={() => navigate("/home")}>
+            🏠 Kembali
+          </button>
+        </div>
       </div>
     );
   };
+
 
   // ================= REVIEW COMPONENT =================
   const ReviewComponent = () => {
     return (
-      <div className="review-container">
-        <h2>Ulasan Jawaban</h2>
+      <div className="review-wrapper">
+        <h3>📘 Ulasan Jawaban</h3>
 
-        {questions.map((q, i) => (
-          <div key={i} className="review-item">
-            <h4>{i + 1}. {q.question}</h4>
+        <div className="review-scroll">
+          {questions.map((q, i) => {
+            const isCorrect =
+              q.type === "multiple_choice" &&
+              userAnswers[i] !== null &&
+              q.options[userAnswers[i]] === q.answer;
 
-            {q.type === "multiple_choice" && (
-              <>
-                <p>
-                  Jawaban kamu:{" "}
-                  <b>
-                    {userAnswers[i] !== null
-                      ? q.options[userAnswers[i]]
-                      : "Tidak dijawab"}
-                  </b>
-                </p>
-                <p>Jawaban benar: <b>{q.answer}</b></p>
-              </>
-            )}
+            return (
+              <div
+                key={i}
+                className={`review-card ${isCorrect ? "correct" : "wrong"}`}
+              >
+                <h4>{i + 1}. {q.question}</h4>
 
-            {q.type === "essay" && (
-              <>
-                <p><b>Jawaban kamu:</b></p>
-                <p>{userAnswers[i] || "-"}</p>
+                {q.type === "multiple_choice" && (
+                  <>
+                    <p>✍️ Jawaban kamu: <b>{userAnswers[i] !== null ? q.options[userAnswers[i]] : "Tidak dijawab"}</b></p>
+                    <p>✅ Jawaban benar: <b>{q.answer}</b></p>
+                  </>
+                )}
 
-                <p><b>Pedoman jawaban:</b></p>
-                <p>{q.answer_desc || "-"}</p>
-              </>
-            )}
-          </div>
-        ))}
+                {q.type === "essay" && (
+                  <>
+                    <p><b>✍️ Jawaban kamu:</b></p>
+                    <div className="essay-box">{userAnswers[i] || "Belum dijawab"}</div>
+
+                    <p><b>📌 Pedoman Jawaban:</b></p>
+                    <div className="guide-box">{q.answer_desc || "-"}</div>
+                  </>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   };
+
+
 
 
 
@@ -261,44 +287,49 @@ const SoalTryout = () => {
   return (
     <div className="latsoal-container">
       <div className="main-content">
-        <div className="sidebar">
-          <button className="back-btn" onClick={() => navigate(-1)}>
-            ← Kembali
-          </button>
 
-          <h3>Navigasi Soal</h3>
-          <div className="question-numbers-grid">
-            {questions.map((_, i) => (
-              <div
-                key={i}
-                className={`question-number-item 
-                  ${i === currentQuestion ? "active" : ""} 
-                  ${userAnswers[i] !== null ? "answered" : ""} 
-                  ${markedQuestions[i] ? "marked" : ""}`}
-                onClick={() => loadQuestion(i)}
-              >
-                {i + 1}
-              </div>
-            ))}
+        {/* 🔥 SIDEBAR HANYA MUNCUL SAAT MENGERJAKAN */}
+        {!quizCompleted && (
+          <div className="sidebar">
+            <button className="back-btn" onClick={() => navigate(-1)}>
+              ← Kembali
+            </button>
+
+            <h3>Navigasi Soal</h3>
+            <div className="question-numbers-grid">
+              {questions.map((_, i) => (
+                <div
+                  key={i}
+                  className={`question-number-item 
+                    ${i === currentQuestion ? "active" : ""} 
+                    ${userAnswers[i] !== null ? "answered" : ""} 
+                    ${markedQuestions[i] ? "marked" : ""}`}
+                  onClick={() => loadQuestion(i)}
+                >
+                  {i + 1}
+                </div>
+              ))}
+            </div>
+
+            {/* 🔥 KETERANGAN */}
+            <div className="legend">
+              <h4>Keterangan</h4>
+              <div><span className="dot answered"></span> Sudah dijawab</div>
+              <div><span className="dot marked"></span> Ditandai</div>
+              <div><span className="dot empty"></span> Belum dijawab</div>
+            </div>
+
+            {/* 🔥 RINGKASAN */}
+            <div className="summary">
+              <h4>Ringkasan</h4>
+              <p>Dijawab: {userAnswers.filter(x => x !== null).length}</p>
+              <p>Ditandai: {markedQuestions.filter(x => x).length}</p>
+              <p>Belum: {questions.length - userAnswers.filter(x => x !== null).length}</p>
+            </div>
           </div>
+        )}
 
-          {/* 🔥 KETERANGAN */}
-          <div className="legend">
-            <h4>Keterangan</h4>
-            <div><span className="dot answered"></span> Sudah dijawab</div>
-            <div><span className="dot marked"></span> Ditandai</div>
-            <div><span className="dot empty"></span> Belum dijawab</div>
-          </div>
-
-          {/* 🔥 RINGKASAN */}
-          <div className="summary">
-            <h4>Ringkasan</h4>
-            <p>Dijawab: {userAnswers.filter(x => x !== null).length}</p>
-            <p>Ditandai: {markedQuestions.filter(x => x).length}</p>
-            <p>Belum: {questions.length - userAnswers.filter(x => x !== null).length}</p>
-          </div>
-        </div>
-
+        {/* 🔥 CONTENT AREA */}
         <div className="content-area">
           {!quizCompleted ? (
             <>
@@ -306,10 +337,15 @@ const SoalTryout = () => {
                 question={questions[currentQuestion]}
                 index={currentQuestion}
               />
+
               <div className="navigation-buttons">
-                <button onClick={prevQuestion} disabled={currentQuestion === 0}>
+                <button
+                  onClick={prevQuestion}
+                  disabled={currentQuestion === 0}
+                >
                   Sebelumnya
                 </button>
+
                 <button onClick={nextQuestion}>
                   {currentQuestion === questions.length - 1
                     ? "Selesai"
@@ -322,12 +358,13 @@ const SoalTryout = () => {
               <ResultComponent />
               <ReviewComponent />
             </>
-           
           )}
         </div>
+
       </div>
     </div>
   );
+
 };
 
 export default SoalTryout;
